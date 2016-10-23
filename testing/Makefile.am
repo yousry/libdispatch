@@ -76,6 +76,7 @@ AM_CPPFLAGS=-I$(top_builddir) -I$(top_srcdir)
 AM_CFLAGS=-Wall $(MARCH_FLAGS) $(CBLOCKS_FLAGS) $(KQUEUE_CFLAGS)
 AM_OBJCFLAGS=-Wall $(MARCH_FLAGS) $(CBLOCKS_FLAGS) -fobjc-gc
 AM_CXXFLAGS=-Wall $(MARCH_FLAGS) $(CXXBLOCKS_FLAGS)
+AM_LDFLAGS=-lkqueue -lpthread_workqueue -pthread -lm
 
 LDADD=libbsdtests.la ../src/libdispatch.la
 libbsdtests_la_LDFLAGS=-avoid-version
