@@ -46,6 +46,8 @@ AM_CPPFLAGS=-I$(top_builddir) -I$(top_srcdir) \
 AM_CFLAGS=-Wall $(VISIBILITY_FLAGS) $(OMIT_LEAF_FP_FLAGS) \
 	$(MARCH_FLAGS) $(CBLOCKS_FLAGS) $(KQUEUE_CFLAGS)
 
+AM_LDFLAGS = -lkqueue -lpthread_workqueue
+
 libdispatch_la_LDFLAGS=-avoid-version
 
 if HAVE_DARWIN_LD
